@@ -78,7 +78,7 @@ class Action(models.Model):
     actor_object_id = models.CharField(max_length=255, db_index=True)
     actor = generic.GenericForeignKey('actor_content_type', 'actor_object_id')
 
-    verb = models.CharField(max_length=255, db_index=True)
+    verb = models.TextField(db_index=True)
     description = models.TextField(blank=True, null=True)
 
     target_content_type = models.ForeignKey(ContentType, blank=True, null=True,
